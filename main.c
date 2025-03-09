@@ -48,7 +48,7 @@ void forward_request (int client_sock) {
         char host_value[256] = {0};
         sscanf(host_line, "Host: %255[^\r\n]", host_value);
         target = get_backend(host_value);
-        printf("Routing to %s (%s:%d)\n", host_value, target->port);
+        printf("Routing to %s (%s:%d)\n", host_value, target->ip, target->port);
     } else {
         printf("No Host header found, using default backend\n");
     }

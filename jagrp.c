@@ -32,11 +32,11 @@ void load_routing_table() {
     char line[256];
     num_routes = 0;
     while (fgets(line, sizeof(line, file), file)) {
-        if (line[0] == '\n' || line['#'] == '#') continue;
+        if (line[0] == '\n' || line[0] == '#') continue;
         int port;
         char host[128], ip[16];
         if (sscanf(line, "%127s %15s %d", host, ip, &port) != 3) {
-            printf("Invalid line in routes.conf: %s", line);
+            printf("Invalid line in routes.conf: %s\n", line);
             continue;
         }
 

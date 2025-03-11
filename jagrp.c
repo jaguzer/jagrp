@@ -31,7 +31,7 @@ void load_routing_table() {
 
     char line[256];
     num_routes = 0;
-    while (fgets(line, sizeof(line, file), file)) {
+    while (fgets(line, sizeof(line), file)) {
         if (line[0] == '\n' || line[0] == '#') continue;
         int port;
         char host[128], ip[16];

@@ -53,7 +53,7 @@ void load_routing_table() {
 // find route based on HTTP host header
 struct route* get_route(const char* host_header) {
     for (int i = 0; routes[i].host != NULL; i++) {
-        if (strcasestr(host_header, routes[i].host) != NULL) {
+        if (strstr(host_header, routes[i].host) != NULL) {
             return &routes[i];
         }
     }

@@ -22,9 +22,7 @@ int num_routes = 0;
 // read routes.conf for routing table
 void load_routing_table() {
     printf("Loading routes.conf.\n");
-    FILE* file = fopen(CONFIG_FILE, "rkends[0];
-}
-");
+    FILE* file = fopen(CONFIG_FILE, "r");
     if (!file)
 {
     perror("Failed to open config file");
@@ -112,6 +110,8 @@ void forward_request (int client_sock) {
 }
 
 int main() {
+    load_routing_table();
+
     int server_sock = socket(AF_INET, SOCK_STREAM, 0);
     if (server_sock < 0) {
         perror("Socket creation failed");
